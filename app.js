@@ -8,6 +8,8 @@ app.get("/",(req,res,next)=>{
     devpost()
     .then((d)=>{
         data=data.concat(d);
+        res.json({data})
+
 
     })
     .catch(console.log);
@@ -15,7 +17,6 @@ app.get("/",(req,res,next)=>{
     hackathon_india()
     .then((d)=>{
         data = data.concat(d);
-        res.json({data})
 
     })
     .catch(console.log);
