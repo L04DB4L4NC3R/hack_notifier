@@ -3,7 +3,7 @@ const devpost = require("./devpost");
 const hackathon_india = require("./hackathon_india");
 const app = express();
 
-app.get("/upcoming",(req,res,next)=>{
+app.get("/",(req,res,next)=>{
     let data = [];
     devpost()
     .then((d)=>{
