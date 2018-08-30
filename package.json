@@ -1,0 +1,23 @@
+{
+  "name": "hack_notifier",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angadsharma1016/hack_notifier.git"
+  },
+  "author": "angad sharma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/angadsharma1016/hack_notifier/issues"
+  },
+  "homepage": "https://github.com/angadsharma1016/hack_notifier#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "request": "^2.88.0"
+  }
+}
