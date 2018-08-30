@@ -21,7 +21,7 @@ module.exports = ()=>{
                 if(date==='')
                     date=$(item).find("time").text();
 
-                if(title!==''&&location!==''&&description!==''){
+                if(title!==''&&location!==''&&description!==''&&prize!==''&&date!==''){
                     data.push({
                         title,
                         location,
