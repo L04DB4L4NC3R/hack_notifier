@@ -2,7 +2,7 @@ const request = require("request");
 const cheerio = require("cheerio");
 
 
-let X = ()=>{
+module.exports = ()=>{
     return new Promise((resolve,reject)=>{
         request({
             method:"GET",
@@ -34,7 +34,8 @@ let scrape=($,data)=>{
             title,
             description,
             location,
-            date
+            date,
+            prize:null
         });
     });
 
@@ -53,7 +54,8 @@ let scrape=($,data)=>{
             title,
             description,
             location,
-            date
+            date,
+            prize:null
         });
     });
 
