@@ -34,8 +34,7 @@ let scrape=($,data)=>{
             title,
             description,
             location,
-            date,
-            prize:null
+            date
         });
     });
 
@@ -54,8 +53,7 @@ let scrape=($,data)=>{
             title,
             description,
             location,
-            date,
-            prize:null
+            date
         });
     });
 
