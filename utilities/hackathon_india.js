@@ -10,7 +10,6 @@ module.exports = ()=>{
             rejectUnauthorized:false,
         },(err,resp,body)=>{
             if(err) reject(err);
-            //ht-eb-card
             let $ = cheerio.load(body),data=[];
             resolve(scrape($,data));
         });

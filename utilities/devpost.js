@@ -18,7 +18,6 @@ module.exports = ()=>{
                 prize=$(item).find("span[class=value]").text().trim();
                 date=$(item).find(".date-range").text().trim();
                 link=$(item).attr("href");
-                console.log(link)
                 if(date==='')
                     date=$(item).find("time").text();
 
