@@ -1,25 +1,18 @@
 const express = require("express");
-const devpost = require("./devpost");
-const hackathon_india = require("./hackathon_india");
+const devpost = require("./utilities/devpost");
+const hackathon_india = require("./utilities/hackathon_india");
 const app = express();
 
 app.get("/",(req,res,next)=>{
     let data = [];
-    devpost()
-    .then((d)=>{
-        data=data.concat(d);
-        res.json({data})
-
-
+    
+    Promise.all([devpost(),hackathon_india()])
+    .then(values=>{
+        data = data.concat(values[0]);
+        data = data.concat(values[1]);
+        res.json({data});
     })
-    .catch(console.log);
-
-    hackathon_india()
-    .then((d)=>{
-        data = data.concat(d);
-
-    })
-    .catch(console.log);
+    .catch(next)
 
 });
 
