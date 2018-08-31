@@ -8,7 +8,9 @@ let hackSchema = new mongoose.Schema({
     prize:{
         type:String,
         default:null
-    }
+    },
+    source:String,
+    link:String
 });
 
 module.exports.hackModel = mongoose.model("hackathon",hackSchema);

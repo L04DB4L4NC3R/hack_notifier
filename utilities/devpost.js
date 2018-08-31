@@ -10,14 +10,15 @@ module.exports = ()=>{
             reject(err);
         else{
             let $ = cheerio.load(body),year = new Date().getFullYear();
-            let location,date,prize,title,description,data=[];
+            let location,date,prize,title,description,data=[],link;
             $(".clearfix").each((index,item)=>{
                 title=$(item).find(".title").text().trim();
                 location=$(item).find(".challenge-location").text().trim();
                 description=$(item).find(".challenge-description").text().trim();
                 prize=$(item).find("span[class=value]").text().trim();
                 date=$(item).find(".date-range").text().trim();
-
+                link=$(item).attr("href");
+                console.log(link)
                 if(date==='')
                     date=$(item).find("time").text();
 
@@ -27,7 +28,9 @@ module.exports = ()=>{
                         location,
                         description,
                         prize,
-                        date
+                        date,
+                        source:"https://devpost.com/hackathons",
+                        link
                     });
                 }
             });
