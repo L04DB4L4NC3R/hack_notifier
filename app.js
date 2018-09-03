@@ -27,10 +27,11 @@ app.get("/",(req,res,next)=>{
 
 
 cronjob()
-.then(console.log)
+.then(()=>{
+    console.log("CRONJOB ran");
+})
 .catch(()=>{
     console.log("Error in cronjob");
-    process.exit();
 });
 
 
