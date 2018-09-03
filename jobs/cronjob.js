@@ -16,10 +16,10 @@ let info = Promise.all([devpost(),hackathon_india()])
 
 let scheduler = ()=>{
     return new Promise((resolve,reject)=>{
-        cron.schedule("* * * * *",()=>{
+        cron.schedule("0 0 0 * * *",()=>{
             info
             .then((d)=>{
-                hackSchema.remove({})
+                hackSchema.deleteMany({})
                 .then(()=>{
                     hackSchema.create(d)
                     .then(resolve)
